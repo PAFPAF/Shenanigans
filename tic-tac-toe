@@ -109,23 +109,23 @@ class Grid:
     def com_turn(self):
         slots_disp = []
         
-        if (Grid.pos1 != "x") and (Grid.pos1 != "o"):
+        if (str(Grid.pos1) != "x") and (str(Grid.pos1) != "o"):
             slots_disp.append(1)
-        if (Grid.pos2 != "x") and (Grid.pos2 != "o"):
+        if (str(Grid.pos2) != "x") and (str(Grid.pos2) != "o"):
             slots_disp.append(2)
-        if (Grid.pos3 != "x") and (Grid.pos3 != "o"):
+        if (str(Grid.pos3) != "x") and (str(Grid.pos3) != "o"):
             slots_disp.append(3)
-        if (Grid.pos4 != "x") and (Grid.pos4 != "o"):
+        if (str(Grid.pos4) != "x") and (str(Grid.pos4) != "o"):
             slots_disp.append(4)
-        if (Grid.pos5 != "x") and (Grid.pos5 != "o"):
+        if (str(Grid.pos5) != "x") and (str(Grid.pos5) != "o"):
             slots_disp.append(5)
-        if (Grid.pos6 != "x") and (Grid.pos6 != "o"):
+        if (str(Grid.pos6) != "x") and (str(Grid.pos6) != "o"):
             slots_disp.append(6)
-        if (Grid.pos7 != "x") and (Grid.pos7 != "o"):
+        if (str(Grid.pos7) != "x") and (str(Grid.pos7) != "o"):
             slots_disp.append(7)
-        if (Grid.pos8 != "x") and (Grid.pos8 != "o"):
+        if (str(Grid.pos8) != "x") and (str(Grid.pos8) != "o"):
             slots_disp.append(8)
-        if (Grid.pos9 != "x") and (Grid.pos9 != "o"):
+        if (str(Grid.pos9) != "x") and (str(Grid.pos9) != "o"):
             slots_disp.append(9)
         
         selection = random.randint(0,(len(slots_disp)-1)) 
@@ -157,7 +157,19 @@ class Grid:
             
     def fim(self):
         
-        if (teste.pos1 == "x" or teste.pos1 == "o") and\
+        if ((teste.pos1 == "x" or teste.pos1 == "o") and ((teste.pos1 == teste.pos2 == teste.pos3)or (teste.pos1 == teste.pos4 == teste.pos7) or (teste.pos1 == teste.pos5 == teste.pos9)) or\
+              (teste.pos2 == "x" or teste.pos2 == "o") and (teste.pos2 == teste.pos5 == teste.pos8) or\
+              (teste.pos3 == "x" or teste.pos3 == "o") and ((teste.pos3 == teste.pos5 == teste.pos7) or (teste.pos9 == teste.pos6 == teste.pos3) ) or (teste.pos3 == teste.pos6 == teste.pos9)) or\
+              (teste.pos4 == "x" or teste.pos4 == "o") and ((teste.pos4 == teste.pos5 == teste.pos6)) or\
+              (teste.pos7 == "x" or teste.pos7 == "o") and ((teste.pos7 == teste.pos8 == teste.pos9)):
+            
+            Grid.flag_fim = "true"
+            teste.display()
+            print("fim")
+    
+        
+            
+        elif (teste.pos1 == "x" or teste.pos1 == "o") and\
         (teste.pos2 == "x" or teste.pos2 == "o") and\
         (teste.pos3 == "x" or teste.pos3 == "o") and\
         (teste.pos4 == "x" or teste.pos4 == "o") and\
@@ -171,16 +183,6 @@ class Grid:
             Grid.flag_fim = "true"
             teste.display()
             print("fim: empate")
-            
-        elif ((teste.pos1 == "x" or teste.pos1 == "o") and ((teste.pos1 == teste.pos2 == teste.pos3)or (teste.pos1 == teste.pos4 == teste.pos7) or (teste.pos1 == teste.pos5 == teste.pos9)) or\
-              (teste.pos2 == "x" or teste.pos2 == "o") and (teste.pos2 == teste.pos5 == teste.pos8) or\
-              (teste.pos3 == "x" or teste.pos3 == "o") and ((teste.pos3 == teste.pos5 == teste.pos7) or (teste.pos9 == teste.pos6 == teste.pos3) ) or (teste.pos3 == teste.pos6 == teste.pos9)) or\
-              (teste.pos4 == "x" or teste.pos4 == "o") and ((teste.pos4 == teste.pos5 == teste.pos6)) or\
-              (teste.pos7 == "x" or teste.pos7 == "o") and ((teste.pos7 == teste.pos8 == teste.pos9)):
-            
-            Grid.flag_fim = "true"
-            teste.display()
-            print("fim")
     
         else:
         
@@ -192,7 +194,6 @@ def start():
 
 ###################
 start()
-print(str(teste.flag_fim))
 
 while teste.flag_fim == "false":
     print("Escolha digito 1-9:  ")
