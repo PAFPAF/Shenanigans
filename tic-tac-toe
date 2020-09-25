@@ -6,6 +6,7 @@ Este é um arquivo de script temporário.
 """
 teste = 1
 import random
+
 #import pdb; pdb.set_trace()
 class Grid:
     def __init__(self,pos1 = " ",pos2 = " ",pos3 = " ",pos4 = "_",pos5 = "_",pos6 = "_",pos7 = "_",pos8 = "_",pos9 = "_", flag_fim = "false"):
@@ -24,7 +25,7 @@ class Grid:
     def my_turn(self, num):
         
         if num == 1:
-            if Grid.pos1 == "o":
+            if Grid.pos1 == "o" or Grid.pos1 == "x":
                 print("input inválido")
                 print("Escolha digito 1-9:  ")
                 dig = int(input())
@@ -33,7 +34,7 @@ class Grid:
                 Grid.pos1 = "x"
                 
         elif num == 2:
-            if Grid.pos2 == "o":
+            if Grid.pos2 == "o" or Grid.pos2 == "x":
                 print("input inválido")
                 print("Escolha digito 1-9:  ")
                 dig = int(input())
@@ -42,7 +43,7 @@ class Grid:
                 Grid.pos2 = "x"
             
         elif num == 3:
-            if Grid.pos3 == "o":
+            if Grid.pos3 == "o" or Grid.pos3 == "x":
                 print("input inválido")
                 print("Escolha digito 1-9:  ")
                 dig = int(input())
@@ -51,7 +52,7 @@ class Grid:
                 Grid.pos3 = "x"
                 
         elif num == 4:
-            if Grid.pos4 == "o":
+            if Grid.pos4 == "o" or Grid.pos4 == "x":
                 print("input inválido")
                 print("Escolha digito 1-9:  ")
                 dig = int(input())
@@ -60,7 +61,7 @@ class Grid:
                 Grid.pos4 = "x"
             
         elif num == 5:
-            if Grid.pos5 == "o":
+            if Grid.pos5 == "o" or Grid.pos5 == "x":
                 print("input inválido")
                 print("Escolha digito 1-9:  ")
                 dig = int(input())
@@ -69,7 +70,7 @@ class Grid:
                 Grid.pos5 = "x"
             
         elif num == 6:
-            if Grid.pos6 == "o":
+            if Grid.pos6 == "o" or Grid.pos6 == "x":
                 print("input inválido")
                 print("Escolha digito 1-9:  ")
                 dig = int(input())
@@ -78,7 +79,7 @@ class Grid:
                 Grid.pos6 = "x"
             
         elif num == 7:
-            if Grid.pos7 == "o":
+            if Grid.pos7 == "o" or Grid.pos7 == "x":
                 print("input inválido")
                 print("Escolha digito 1-9:  ")
                 dig = int(input())
@@ -87,7 +88,7 @@ class Grid:
                 Grid.pos7 = "x"
             
         elif num == 8:
-            if Grid.pos8 == "o":
+            if Grid.pos8 == "o" or Grid.pos8 == "x":
                 print("input inválido")
                 print("Escolha digito 1-9:  ")
                 dig = int(input())
@@ -96,7 +97,7 @@ class Grid:
                 Grid.pos8 = "x"
             
         elif num == 9:
-            if Grid.pos9 == "o":
+            if Grid.pos9 == "o" or Grid.pos9 == "x":
                 print("input inválido")
                 print("Escolha digito 1-9:  ")
                 dig = int(input())
@@ -130,25 +131,24 @@ class Grid:
         
         selection = random.randint(0,(len(slots_disp)-1)) 
         
-        if selection == 0:
+        if slots_disp[selection] == 1:
             Grid.pos1 = "o"
-        if selection == 1:
+        if slots_disp[selection] == 2:
             Grid.pos2 = "o"
-        if selection == 2:
+        if slots_disp[selection] == 3:
             Grid.pos3 = "o"
-        if selection == 3:
+        if slots_disp[selection] == 4:
             Grid.pos4 = "o"
-        if selection == 4:
+        if slots_disp[selection] == 5:
             Grid.pos5 = "o"
-        if selection == 5:
+        if slots_disp[selection] == 6:
             Grid.pos6 = "o"
-        if selection == 6:
+        if slots_disp[selection] == 7:
             Grid.pos7 = "o"
-        if selection == 7:
+        if slots_disp[selection] == 8:
             Grid.pos8 = "o"
-        if selection == 8:
+        if slots_disp[selection] == 9:
             Grid.pos9 = "o"
-        
         
     def display(self):
       print("\n"+self.pos7+"|"+self.pos8+"|"+self.pos9+
