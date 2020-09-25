@@ -7,129 +7,208 @@ Este é um arquivo de script temporário.
 teste = 1
 import random
 #import pdb; pdb.set_trace()
-class grid:
-    def __init__(self,pos1 = "_",pos2 = "_",pos3 = "_",pos4 = "_",pos5 = "_",pos6 = "_",pos7 = " ",pos8 = " ",pos9 = " "):
+class Grid:
+    def __init__(self,pos1 = " ",pos2 = " ",pos3 = " ",pos4 = "_",pos5 = "_",pos6 = "_",pos7 = "_",pos8 = "_",pos9 = "_", flag_fim = "false"):
         
-        grid.pos1 = pos1
-        grid.pos2 = pos2
-        grid.pos3 = pos3
-        grid.pos4 = pos4
-        grid.pos5 = pos5
-        grid.pos6 = pos6
-        grid.pos7 = pos7
-        grid.pos8 = pos8
-        grid.pos9 = pos9
+        Grid.flag_fim = flag_fim
+        Grid.pos1 = pos1
+        Grid.pos2 = pos2
+        Grid.pos3 = pos3
+        Grid.pos4 = pos4
+        Grid.pos5 = pos5
+        Grid.pos6 = pos6
+        Grid.pos7 = pos7
+        Grid.pos8 = pos8
+        Grid.pos9 = pos9
         
     def my_turn(self, num):
         
-        
-        if num == 7:
-            grid.pos1 = "x"
-        elif num == 8:
-            grid.pos2 = "x"
-        elif num == 9:
-            grid.pos3 = "x"
-        elif num == 4:
-            grid.pos4 = "x"
-        elif num == 5:
-            grid.pos5 = "x"
-        elif num == 6:
-            grid.pos6 = "x"
-        elif num == 1:
-            grid.pos7 = "x"
+        if num == 1:
+            if Grid.pos1 == "o":
+                print("input inválido")
+                print("Escolha digito 1-9:  ")
+                dig = int(input())
+                teste.my_turn(dig)
+            else:
+                Grid.pos1 = "x"
+                
         elif num == 2:
-            grid.pos8 = "x"
+            if Grid.pos2 == "o":
+                print("input inválido")
+                print("Escolha digito 1-9:  ")
+                dig = int(input())
+                teste.my_turn(dig)
+            else:
+                Grid.pos2 = "x"
+            
         elif num == 3:
-            grid.pos9 = "x"
+            if Grid.pos3 == "o":
+                print("input inválido")
+                print("Escolha digito 1-9:  ")
+                dig = int(input())
+                teste.my_turn(dig)
+            else:
+                Grid.pos3 = "x"
+                
+        elif num == 4:
+            if Grid.pos4 == "o":
+                print("input inválido")
+                print("Escolha digito 1-9:  ")
+                dig = int(input())
+                teste.my_turn(dig)
+            else:
+                Grid.pos4 = "x"
+            
+        elif num == 5:
+            if Grid.pos5 == "o":
+                print("input inválido")
+                print("Escolha digito 1-9:  ")
+                dig = int(input())
+                teste.my_turn(dig)
+            else:
+                Grid.pos5 = "x"
+            
+        elif num == 6:
+            if Grid.pos6 == "o":
+                print("input inválido")
+                print("Escolha digito 1-9:  ")
+                dig = int(input())
+                teste.my_turn(dig)
+            else:
+                Grid.pos6 = "x"
+            
+        elif num == 7:
+            if Grid.pos7 == "o":
+                print("input inválido")
+                print("Escolha digito 1-9:  ")
+                dig = int(input())
+                teste.my_turn(dig)
+            else:
+                Grid.pos7 = "x"
+            
+        elif num == 8:
+            if Grid.pos8 == "o":
+                print("input inválido")
+                print("Escolha digito 1-9:  ")
+                dig = int(input())
+                teste.my_turn(dig)
+            else:
+                Grid.pos8 = "x"
+            
+        elif num == 9:
+            if Grid.pos9 == "o":
+                print("input inválido")
+                print("Escolha digito 1-9:  ")
+                dig = int(input())
+                teste.my_turn(dig)
+            else:
+                Grid.pos9 = "x"
         else:
             print("input inválido")
             
     def com_turn(self):
         slots_disp = []
         
-        if (grid.pos1 != "x") and (grid.pos1 != "o"):
-            slots_disp.append(7)
-        if (grid.pos2 != "x") and (grid.pos2 != "o"):
-            slots_disp.append(8)
-        if (grid.pos3 != "x") and (grid.pos3 != "o"):
-            slots_disp.append(9)
-        if (grid.pos4 != "x") and (grid.pos4 != "o"):
-            slots_disp.append(4)
-        if (grid.pos5 != "x") and (grid.pos5 != "o"):
-            slots_disp.append(5)
-        if (grid.pos6 != "x") and (grid.pos6 != "o"):
-            slots_disp.append(6)
-        if (grid.pos7 != "x") and (grid.pos7 != "o"):
+        if (Grid.pos1 != "x") and (Grid.pos1 != "o"):
             slots_disp.append(1)
-        if (grid.pos8 != "x") and (grid.pos8 != "o"):
+        if (Grid.pos2 != "x") and (Grid.pos2 != "o"):
             slots_disp.append(2)
-        if (grid.pos9 != "x") and (grid.pos9 != "o"):
+        if (Grid.pos3 != "x") and (Grid.pos3 != "o"):
             slots_disp.append(3)
+        if (Grid.pos4 != "x") and (Grid.pos4 != "o"):
+            slots_disp.append(4)
+        if (Grid.pos5 != "x") and (Grid.pos5 != "o"):
+            slots_disp.append(5)
+        if (Grid.pos6 != "x") and (Grid.pos6 != "o"):
+            slots_disp.append(6)
+        if (Grid.pos7 != "x") and (Grid.pos7 != "o"):
+            slots_disp.append(7)
+        if (Grid.pos8 != "x") and (Grid.pos8 != "o"):
+            slots_disp.append(8)
+        if (Grid.pos9 != "x") and (Grid.pos9 != "o"):
+            slots_disp.append(9)
         
         selection = random.randint(0,(len(slots_disp)-1)) 
         
         if selection == 0:
-            grid.pos7 = "o"
+            Grid.pos1 = "o"
         if selection == 1:
-            grid.pos8 = "o"
+            Grid.pos2 = "o"
         if selection == 2:
-            grid.pos9 = "o"
+            Grid.pos3 = "o"
         if selection == 3:
-            grid.pos4 = "o"
+            Grid.pos4 = "o"
         if selection == 4:
-            grid.pos5 = "o"
+            Grid.pos5 = "o"
         if selection == 5:
-            grid.pos6 = "o"
+            Grid.pos6 = "o"
         if selection == 6:
-            grid.pos1 = "o"
+            Grid.pos7 = "o"
         if selection == 7:
-            grid.pos2 = "o"
+            Grid.pos8 = "o"
         if selection == 8:
-            grid.pos3 = "o"
+            Grid.pos9 = "o"
         
         
     def display(self):
-      print("\n"+self.pos1+"|"+self.pos2+"|"+self.pos3+"\n"+self.pos4+"|"+self.pos5+"|"+self.pos6+"\n"+self.pos7+"|"+self.pos8+"|"+self.pos9+"\n")
+      print("\n"+self.pos7+"|"+self.pos8+"|"+self.pos9+
+            "\n"+self.pos4+"|"+self.pos5+"|"+self.pos6+\
+            "\n"+self.pos1+"|"+self.pos2+"|"+self.pos3+"\n")
             
+    def fim(self):
+        
+        if (teste.pos1 == "x" or teste.pos1 == "o") and\
+        (teste.pos2 == "x" or teste.pos2 == "o") and\
+        (teste.pos3 == "x" or teste.pos3 == "o") and\
+        (teste.pos4 == "x" or teste.pos4 == "o") and\
+        (teste.pos5 == "x" or teste.pos5 == "o") and\
+        (teste.pos6 == "x" or teste.pos6 == "o") and\
+        (teste.pos7 == "x" or teste.pos7 == "o") and\
+        (teste.pos8 == "x" or teste.pos8 == "o") and\
+        (teste.pos9 == "x" or teste.pos9 == "o"):
+            
+            
+            Grid.flag_fim = "true"
+            teste.display()
+            print("fim: empate")
+            
+        elif ((teste.pos1 == "x" or teste.pos1 == "o") and ((teste.pos1 == teste.pos2 == teste.pos3)or (teste.pos1 == teste.pos4 == teste.pos7) or (teste.pos1 == teste.pos5 == teste.pos9)) or\
+              (teste.pos2 == "x" or teste.pos2 == "o") and (teste.pos2 == teste.pos5 == teste.pos8) or\
+              (teste.pos3 == "x" or teste.pos3 == "o") and ((teste.pos3 == teste.pos5 == teste.pos7) or (teste.pos9 == teste.pos6 == teste.pos3) ) or (teste.pos3 == teste.pos6 == teste.pos9)) or\
+              (teste.pos4 == "x" or teste.pos4 == "o") and ((teste.pos4 == teste.pos5 == teste.pos6)) or\
+              (teste.pos7 == "x" or teste.pos7 == "o") and ((teste.pos7 == teste.pos8 == teste.pos9)):
+            
+            Grid.flag_fim = "true"
+            teste.display()
+            print("fim")
+    
+        else:
+        
+            pass
 
 def start():
       global teste
-      teste = grid()
+      teste = Grid()
 
 ###################
 start()
+print(str(teste.flag_fim))
 
-flag_fim = "false"
-
-while flag_fim == "false":
-    dig = input()
-    print("digito 1-9  "+ dig)
+while teste.flag_fim == "false":
+    print("Escolha digito 1-9:  ")
+    dig = int(input())
     
-    if (teste.pos1 == "x" or teste.pos1 == "o") and\
-            (teste.pos2 == "x" or teste.pos2 == "o") and\
-            (teste.pos3 == "x" or teste.pos3 == "o") and\
-            (teste.pos4 == "x" or teste.pos4 == "o") and\
-            (teste.pos5 == "x" or teste.pos5 == "o") and\
-            (teste.pos6 == "x" or teste.pos6 == "o") and\
-            (teste.pos7 == "x" or teste.pos7 == "o") and\
-            (teste.pos8 == "x" or teste.pos8 == "o") and\
-            (teste.pos9 == "x" or teste.pos9 == "o"):
-                
-                print("fim")
-                flag_fim = "true"
-                break
-            
-    elif ((teste.pos1 == "x" or teste.pos1 == "o") or (teste.pos2 == "x" or teste.pos2 == "o") or (teste.pos3 == "x" or teste.pos3 == "o") or (teste.pos4 == "x" or teste.pos4 == "o") or (teste.pos5 == "x" or teste.pos5 == "o") or (teste.pos6 == "x" or teste.pos6 == "o") or (teste.pos7 == "x" or teste.pos7 == "o") or (teste.pos8 == "x" or teste.pos8 == "o") or (teste.pos9 == "x" or teste.pos9 == "o"))and\
-        ((teste.pos1 == teste.pos2 == teste.pos3) or (teste.pos7 == teste.pos8 == teste.pos9) or (teste.pos4 == teste.pos5 == teste.pos6) or (teste.pos1 == teste.pos5 == teste.pos9) or (teste.pos3 == teste.pos5 == teste.pos7) or (teste.pos1 == teste.pos4 == teste.pos7) or (teste.pos2 == teste.pos5 == teste.pos8) or (teste.pos3 == teste.pos6 == teste.pos9)):
-        print("fim")
-        flag_fim = "true"
+
+    teste.my_turn(dig)
+    teste.display()
+    teste.fim()
+    
+    if teste.flag_fim == "true":
         break
     
-    else:
+    teste.com_turn()
+    teste.display()
+    teste.fim()
     
-        teste.my_turn(dig)
-        teste.display()
-        teste.com_turn()
-        teste.display()
-
-
+    if teste.flag_fim == "true":
+        break
